@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>svg-arc</title>
+</head>
+<body>
+    <svg viewBox="0 0 100 100" style="border: green solid;">
+        <style>
+            #gridlines {
+                stroke: green;
+                stroke-width: .5;
+            }
+
+            .axis {
+                stroke-width: .8;
+            }
+
+            #points {
+                fill: magenta;
+            }
+            
+            .myArc {
+                stroke: blue;
+                stroke-width: .5;
+            }
+        </style>
+
+        <g id="gridlines">
+            <path d="M10 0 V100" ></path>
+            <path d="M20 0 V100" ></path>
+            <path d="M30 0 V100" ></path>
+            <path d="M40 0 V100" ></path>
+            <path class="axis" d="M50 0 V100" ></path>
+            <path d="M60 0 V100" ></path>
+            <path d="M70 0 V100" ></path>
+            <path d="M80 0 V100" ></path>
+            <path d="M90 0 V100" ></path>
+
+
+            <path d="M0 20 H100" ></path>
+            <path d="M0 10 H100" ></path>
+            <path d="M0 30 H100" ></path>
+            <path d="M0 40 H100" ></path>
+            <path class="axis" d="M0 50 H100" ></path>
+            <path d="M0 60 H100" ></path>
+            <path d="M0 70 H100" ></path>
+            <path d="M0 80 H100" ></path>
+            <path d="M0 90 H100" ></path>
+        </g>
+
+        <!-- A=for arc
+             5=x    ->x:y 
+             10=y
+             0= rotation
+             0= other part of arc (0 for actual)
+             1= flipped (0 for actual)
+             70= ending coordinate x
+             50= ening coordinate y
+        -->
+        <!-- for upper part -->
+        <!-- <path fill="royalblue" class="myArc" d="M30 50 A5 10, 0, 0 0, 70 50" ></path> -->
+        
+        <!-- <path fill="royalblue" class="myArc" d="M30 50 A5 10, 0, 0 1, 70 50" ></path> -->
+
+        <path fill="royalblue" class="myArc" d="M30 50 A25 25, 0, 1 0, 70 50" ></path>
+        
+        <ellipse
+            stroke-width=".7"
+            fill="magenta"
+            style="opacity: 0.4"
+            cx="50"
+            cy="50"
+            rx="20"
+            ry="40"
+        >
+        </ellipse>
+        
+        <g id="points">
+            <circle cx="30" cy="50" r="1" ></circle>
+            <circle cx="50" cy="50" r="1" ></circle>
+            <circle cx="70" cy="50" r="1" ></circle>
+        </g>
+    </svg>
+</body>
+</html>
